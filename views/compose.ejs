@@ -1,0 +1,50 @@
+<%- include("partials/header"); -%>
+<div class="form-group">
+    <h1>Compose</h1>
+   
+    <form action="/compose" method="post">
+        <div class="form-group">
+            <label for="">TimeStamp</label>
+            <input class="form-control" type="text" name="txt1" style="width: 85%;" placeholder="Enter a Timestamp"
+                autocomplete="off">
+
+            <label for="">Tag</label>
+            <input class="form-control" type="text" name="txt2" style="width: 85%;" placeholder="Enter a tag"
+                autocomplete="off">
+
+
+            <label for="">Comment</label>
+            <textarea class="form-control" name="txt3" id="" cols="60" rows="7"
+                placeholder="Compose your comment"></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">Publish</button>
+      
+        <hr>
+        <div class="adj">
+            <% for( let index = 0; index < posts.length; index++ ) { %>
+            
+                <h2>➢<%= posts[index].txt1 %> </h2>
+                <h3><%= posts[index].txt2 %> </h3>
+                <p><%= posts[index].txt3 %> </p>
+               
+               
+               
+                <% } %> 
+
+
+        </div>
+            
+               
+        
+ 
+    </form>
+    <%  if(posts.length!=0){   %> 
+        <form action="/download" method="post">
+            <button class="btn btn-primary" type="submit">Download</button>
+        </form>
+<%       }%>
+</div>
+  
+
+   
+    <%- include("partials/footer"); -%>

@@ -1,0 +1,26 @@
+
+<%- include("partials/header");  -%> 
+<h1>CONVERT</h1>
+<form action="/action" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label class="form-label" for="customFile">Upload a video</label>
+    </div>
+    <div class="form-group">
+    <input required name="video" type='file' class="form-control" accept=".mp4,.mp3, .avi, .mov" onchange="convertToAudio(this)" />
+  </div>
+    <div class="form-group">
+        <select  class="form-select" name="to" aria-label="Default select example"  required>
+            <option value="" >Format</option>
+            <option value="mp3">mp3</option>
+            <option value="mov">mov</option>
+            <option value="avi">avi</option>
+           
+
+          </select>
+    </div>
+  
+    <button id="rst" type="submit" class="btn btn-primary">Submit</button>
+    
+</form>
+
+<%- include("partials/footer");  -%> 
